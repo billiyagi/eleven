@@ -1,0 +1,19 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+.eleven-font {
+    font-family: 'Noto Serif', serif;
+}
+
+.img-brand {
+    width: 8em;
+}
+.bg-white {
+    background-color: #fff;
+}
+.img-fit {
+    object-fit: cover;
+}
+header {
+    z-index: 999;
+}
