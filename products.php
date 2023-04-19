@@ -2,59 +2,24 @@
 
 <?php require_once('system/templates/landing/navbar.php'); ?>
 
-<main class="mt-2 mt-md-5">
-
-    <!-- Intro -->
-    <section class="hero-jumbotron">
-        <div class="container px-md-0 px-3">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="row h-100">
-                        <div class="col-md-8 py-5 py-md-0">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="mb-4">
-                                    <div class="fs-1 eleven-font fw-bold">Fashionable disemua gaya unikmu.</div>
-                                    <p class="mt-2">Raih potongan hingga 80% untuk pengguna baru, daftar akun sekarang.</p>
-                                    <a href="" class="btn btn-lg btn-outline-dark rounded-0 border-3">Daftar akun</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <img src="<?php echo assets('img/hero.jpg') ?>" alt="" style="width: 100%">
-                </div>
+<main>
+    <section class="bg-jumbotron position-relative" style="background-image: url(<?php echo assets('img/hero.jpg'); ?>);">
+        <div class="position-absolute top-0 bg-jumbotron-transparent w-100 h-100 text-light">
+            <div class="d-flex flex-column justify-content-center align-items-center h-100 text-center">
+                <div class="fs-1 eleven-font fw-bold">Fashionable disemua gaya unikmu.</div>
+                <p class="fs-3 eleven-font">eleven style for everyone</p>
             </div>
         </div>
     </section>
-
-    <!-- Designer -->
-    <section>
-        <div class="container bg-light">
-            <div class="px-3 py-5">
-                <div class="fs-1 eleven-font mb-4"><strong>Beragam fashion</strong> dengan berbagai Desainer terbaik diseluruh dunia.</div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 p-0">
-                    <img src="<?php echo assets('img/designer-1.jpg') ?>" alt="" width="100%" height="700px" class="img-fit">
-                </div>
-                <div class="col-md-6 p-0">
-                    <img src="<?php echo assets('img/designer-2.jpg') ?>" alt="" width="100%" height="700px" class="img-fit">
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-        </div>
-    </section>
-
-    <!-- Product -->
-    <section class="mt-5">
-        <div class="container pt-5">
-            <div class="d-md-flex justify-content-between align-items-center pt-5 pb-3">
-                <div class="fs-1 eleven-font text-center"><strong>Fashion terbaik</strong> yang cocok untuk gayamu</div>
-                <a href="#" class="btn btn-lg btn-outline-dark rounded-0 border-3 d-md-block d-none">Lihat Semua <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="row mt-4 gy-4">
+    <section class="my-2 my-md-5">
+        <div class="container p-5">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Semua Produk</li>
+                </ol>
+            </nav>
+            <div class="row gy-4">
                 <div class="col-12 col-md-6 col-lg-4">
                     <a href="#" class="card border-dark-hover rounded-0">
                         <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
@@ -146,17 +111,6 @@
                     </a>
                 </div>
             </div>
-            <div class="d-flex justify-content-center">
-                <a href="#" class="btn btn-lg btn-outline-dark rounded-0 border-3 d-md-none d-inline-block mt-5">Lihat Semua <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="bg-light mt-5 pt-3 pb-5">
-        <div class="container py-5">
-            <div class="fs-1 eleven-font mb-4">Perlu bantuan atau ingin bermitra bersama kami? Hubungi kami sekarang juga.</div>
-            <a href="#" class="btn btn-lg btn-outline-dark rounded-0 border-3"><i class="fab fa-whatsapp"></i> Whatsapp</a>
         </div>
     </section>
 </main>

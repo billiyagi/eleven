@@ -1,3 +1,6 @@
+* {
+    transition: all 0.3s;
+}
 body {
     font-family: 'Noto Sans', sans-serif;
 }
@@ -15,5 +18,68 @@ body {
     object-fit: cover;
 }
 header {
-    z-index: 999;
+    z-index: 99;
+}
+#menu {
+    z-index: 110;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.bg-dark-transparent {
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.hover-bg-light {
+    background-color: transparent;
+}
+.hover-bg-light:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000 !important;
+}
+
+.menu-close {
+    transform: translate(-100%)
+}
+
+.menu-open {
+    transform: translate(0%);
+}
+
+.bg-white-blur {
+    background-color: rgba(255, 255, 255, 255,.9);
+    backdrop-filter: blur(35px);
+}
+
+.bg-jumbotron {
+    background-size: cover;
+    height: 450px;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .bg-jumbotron {
+        background-size: cover;
+        height: 300px;
+        background-attachment: fixed;
+}
+}
+
+.bg-jumbotron-transparent {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.border-dark-hover {
+    border: 3px transparent solid;
+}
+
+.border-dark-hover:hover {
+    border: 3px #000 solid;
+}
+
+.size-button:checked ~ button{
+    background-color: #212529;
+    color: #fff;
 }
