@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 
 // Core Configuration
 require_once('core/config.php');
+require_once('session.php');
 require_once('core/Database.php');
 
 // Autoload Class
@@ -20,7 +21,3 @@ array_pop($dir);
 $dir = implode('/', $dir);
 
 require_once($dir . '/vendor/autoload.php');
-
-use voku\helper\AntiXSS;
-
-$antiXSS = new AntiXSS();

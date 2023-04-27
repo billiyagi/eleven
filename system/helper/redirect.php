@@ -12,5 +12,5 @@ function notFound($message = 'Halaman yang anda cari tidak ditemukan.')
 
 function assets($path)
 {
-    return "assets/$path";
+    return BASE_URL_ASSETS . "$path";
 }

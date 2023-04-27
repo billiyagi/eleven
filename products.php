@@ -3,7 +3,7 @@
 <?php require_once('system/templates/landing/navbar.php'); ?>
 
 <main>
-    <section class="bg-jumbotron position-relative" style="background-image: url(<?php echo assets('img/hero.jpg'); ?>);">
+    <section class="bg-jumbotron position-relative" style="background-image: url(<?php echo assets('img/products-header.png'); ?>);">
         <div class="position-absolute top-0 bg-jumbotron-transparent w-100 h-100 text-light">
             <div class="d-flex flex-column justify-content-center align-items-center h-100 text-center">
                 <div class="fs-1 eleven-font fw-bold">Fashionable disemua gaya unikmu.</div>
@@ -12,7 +12,7 @@
         </div>
     </section>
     <section class="my-2 my-md-5">
-        <div class="container p-5">
+        <div class="container p-4 p-md-5">
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>

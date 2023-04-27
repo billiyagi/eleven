@@ -29,6 +29,10 @@ class ComposerStaticInit2f5245fcbd8940162c1a8398989120b7
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
             'Symfony\\Polyfill\\Iconv\\' => 23,
         ),
+        'R' => 
+        array (
+            'Rakit\\Validation\\' => 17,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -60,6 +64,10 @@ class ComposerStaticInit2f5245fcbd8940162c1a8398989120b7
         'Symfony\\Polyfill\\Iconv\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
+        ),
+        'Rakit\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rakit/validation/src',
         ),
     );
 

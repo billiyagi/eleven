@@ -4,7 +4,7 @@
 
 <main>
     <form action="" method="post">
-        <section class="container my-5 pb-5">
+        <section class="container my-3 my-md-5 pb-5 p-3 p-md-0">
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Products</a></li>
@@ -108,15 +108,17 @@
     </form>
 </main>
 <script>
-    Swal.fire({
-        title: 'Kamu belum login',
-        text: 'Mohon login terlebih dahulu untuk melakukan pemesanan.',
-        icon: 'warning',
-        confirmButtonText: `Login`,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $('#loginModal').modal('show');
-        }
-    })
+    setTimeout(function() {
+        Swal.fire({
+            title: 'Kamu belum login',
+            text: 'Mohon login terlebih dahulu untuk melakukan pemesanan.',
+            icon: 'warning',
+            confirmButtonText: `Login`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('#loginModal').modal('show');
+            }
+        });
+    }, 4000);
 </script>
 <?php require_once('system/templates/landing/footer.php'); ?>

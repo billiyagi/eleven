@@ -62,9 +62,11 @@ header {
 @media (max-width: 768px) {
     .bg-jumbotron {
         background-size: cover;
+        background-repeat: no-repeat;
         height: 300px;
         background-attachment: fixed;
-}
+        background-position: center right;
+    }
 }
 
 .bg-jumbotron-transparent {
@@ -82,4 +84,41 @@ header {
 .size-button:checked ~ button{
     background-color: #212529;
     color: #fff;
+}
+
+#loadPage{
+    z-index: 999;
+}
+#loadPageBg{
+    z-index: 998;
+}
+
+.close-loading {
+    transition: .5s;
+    transform: translateY(-100%);
+}
+.close-loading-bg {
+    transition: .8s;
+    transform: translateY(-100%);
+}
+.eleven-outline {
+    outline: 3px
+}
+.btn-eleven:hover {
+    background-color: #fff;
+    color: #000;
+}
+.btn-eleven:focus {
+    background-color: #fff;
+    color: #000;
+}
+.btn-eleven:active {
+    background-color: #fff;
+    color: #000;
+}
+
+.aside-btn-eleven:hover {
+    transition: 0s !important;
+    background-color: #212529;
+    color: #fff !important;
 }

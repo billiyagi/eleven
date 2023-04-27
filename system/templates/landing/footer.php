@@ -1,7 +1,7 @@
 <footer class="bg-dark">
     <div class="container text-light text-center">
         <div class="nav justify-content-around">
-            <a href="index.php" class="nav-link p-4 text-light">Beranda</a>
+            <a href="<?php echo BASE_URL_LANDING; ?>" class="nav-link p-4 text-light">Beranda</a>
             <a href="products.php" class="nav-link p-4 text-light">Produk</a>
             <a href="reseller.php" class="nav-link p-4 text-light">Reseller</a>
             <a href="about.php" class="nav-link p-4 text-light">Tentang</a>
@@ -21,7 +21,7 @@
             <span class="fs-1 fw-bold cursor-pointer" id="menuCloseBtn">&times;</span>
         </div>
         <div class="nav mt-4">
-            <a href="index.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Home</a>
+            <a href="<?php echo BASE_URL_LANDING; ?>" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Home</a>
             <a href="products.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Produk</a>
             <a href="reseller.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Reseller</a>
             <a href="about.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Tentang</a>
@@ -40,19 +40,19 @@
     <div class="modal-dialog">
         <div class="modal-content border-0">
             <div class="modal-body">
-                <form action="#" method="post">
+                <form action="#" method="post" id="signInForm" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" name="email" class="form-control" id="email" autofocus>
+                        <input type="text" name="signin_email" class="form-control" id="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="signin_password" id="password" class="form-control" required>
                     </div>
 
                     <div class="d-flex justify-content-between">
                         <a href="#" class="btn btn-outline-dark rounded-0 border-3" data-bs-target="#signUpModal" data-bs-toggle="modal"><i class="fas fa-user-plus"></i> Daftar</a>
-                        <a href="#" class="btn btn-outline-dark rounded-0 border-3"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
+                        <button type="submit" name="user_signin" id="user_signin_btn" class="btn btn-outline-dark rounded-0 border-3"><i class="fas fa-sign-in-alt me-2"></i> Login</button>
                     </div>
                 </form>
             </div>
@@ -65,45 +65,52 @@
     <div class="modal-dialog">
         <div class="modal-content border-0">
             <div class="modal-body">
-                <form action="#" method="post">
+                <form action="#" method="post" id="signupForm" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <div class="container-fluid px-0">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="first_name" class="form-label">Nama Depan</label>
-                                    <input type="text" name="first_name" class="form-control" id="first_name">
+                                    <input type="text" name="first_name" class="form-control" id="first_name" aria-describedby="firstNameFeedback" required>
+                                    <div id="first_name_feedback">
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="last_name" class="form-label">Nama Belakang</label>
-                                    <input type="text" name="last_name" class="form-control" id="last_name">
+                                    <input type="text" name="last_name" class="form-control" id="last_name" required>
+                                    <div id="last_name_feedback">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" name="email" class="form-control" id="email">
+                        <input type="text" name="signup_email" class="form-control" id="signup_email" required>
+                        <div id="signup_email_feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Username</label>
+                        <input type="text" name="signup_username" class="form-control" id="signup_username" required>
+                        <div id="signup_username_feedback"></div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="signup_password" id="signup_password" class="form-control" required>
+                        <div id="signup_password_feedback"></div>
                     </div>
 
                     <div class="d-flex justify-content-between">
                         <a href="#" class="btn btn-outline-dark rounded-0 border-3" data-bs-target="#loginModal" data-bs-toggle="modal"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
-                        <a href="#" class="btn btn-outline-dark rounded-0 border-3">Submit</a>
+                        <button type="submit" name="user_signup" id="user_signup_btn" class="btn btn-outline-dark rounded-0 border-3">
+                            Submit
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Bootstrap Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
-<!-- JQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <!-- Primary JS -->
 <script src="<?php echo assets('js/eleven.js'); ?>"></script>

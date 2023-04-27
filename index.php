@@ -32,7 +32,7 @@
     <section>
         <div class="container bg-light">
             <div class="px-3 py-5">
-                <div class="fs-1 eleven-font mb-4"><strong>Beragam fashion</strong> dengan berbagai Desainer terbaik diseluruh dunia.</div>
+                <div class="fs-2 eleven-font mb-4"><strong>Beragam fashion</strong> dengan berbagai Desainer terbaik diseluruh dunia.</div>
             </div>
             <div class="row">
                 <div class="col-md-6 p-0">
