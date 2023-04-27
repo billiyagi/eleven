@@ -1,1 +1,210 @@
-<?php require_once('../system/bootstrap.php');
+<?php require_once('../system/bootstrap.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Primary CSS -->
+    <link rel="stylesheet" href="<?php echo assets('css/eleven.css'); ?>">
+
+    <title><?php echo APP_NAME; ?> Admin page</title>
+</head>
+
+<body>
+
+    <?php
+    // var_dump($_SESSION['userEleven']);
+    ?>
+
+    <header style="margin-left: 230px;">
+        <div class="container-fluid px-3 py-4 d-flex justify-content-between align-items-center">
+            <div class="title-page">
+                <h2 class="fw-bolder">Fashion Dashboard</h2>
+                <p class="fw-lighter fs-6 m-0 p-0">Selamat datang, Billiyagi!</p>
+            </div>
+            <div class="text-right">
+                <div class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-dark" style="width: 20px; height: 20px">
+                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <strong class="btn btn-dark">Febry Billiyagi</strong>
+            </div>
+        </div>
+    </header>
+
+    <aside class="position-fixed h-100 top-0 border-end" style="width: 220px">
+        <div class="d-flex justify-content-center py-2">
+            <img src="<?php echo assets('img/logo/eleven-dark-logo.png'); ?>" alt="Eleven Logo" width="150px">
+        </div>
+        <ul class="nav flex-column px-3 mt-5">
+            <li class="nav-item mb-3">
+                <a class="nav-link bg-dark text-light rounded-3" aria-current="page" href="#">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px">
+                            <path fill-rule="evenodd" d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+                            <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
+                        </svg>
+
+                        <span class="ms-2">Dashboard</span>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-dark rounded-3 aside-btn-eleven" aria-current="page" href="#">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px">
+                            <path d="M6 3a3 3 0 00-3 3v2.25a3 3 0 003 3h2.25a3 3 0 003-3V6a3 3 0 00-3-3H6zM15.75 3a3 3 0 00-3 3v2.25a3 3 0 003 3H18a3 3 0 003-3V6a3 3 0 00-3-3h-2.25zM6 12.75a3 3 0 00-3 3V18a3 3 0 003 3h2.25a3 3 0 003-3v-2.25a3 3 0 00-3-3H6zM17.625 13.5a.75.75 0 00-1.5 0v2.625H13.5a.75.75 0 000 1.5h2.625v2.625a.75.75 0 001.5 0v-2.625h2.625a.75.75 0 000-1.5h-2.625V13.5z" />
+                        </svg>
+
+                        <span class="ms-2">Produk</span>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-dark rounded-3 aside-btn-eleven" aria-current="page" href="#">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px">
+                            <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z" clip-rule="evenodd" />
+                        </svg>
+
+                        <span class="ms-2">Pesanan</span>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-dark rounded-3 aside-btn-eleven" aria-current="page" href="#">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px">
+                            <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
+                        </svg>
+
+
+                        <span class="ms-2">Pengguna</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="d-flex justify-content-center flex-column position-absolute bottom-0 w-100 py-3 px-2">
+            <div class="d-flex justify-content-center align-items-center mb-4 px-2">
+                <img src="" alt="Gambar Cuaca" id="weatherIcon" style="width: 30px; height: 30px;" class="me-3">
+                <small class="w-100">
+                    <span class="d-block" id="weatherLocation"></span>
+                    <span class="d-block" id="weatherTemperature"></span>
+                </small>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center btn btn-outline-secondary me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;" class="fw-bold">
+                        <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd" />
+                    </svg>
+
+                    <small class="ms-2">Home</small>
+                </div>
+                <div class="d-flex align-items-center btn btn-outline-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;" class="fw-bold">
+                        <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M19 10a.75.75 0 00-.75-.75H8.704l1.048-.943a.75.75 0 10-1.004-1.114l-2.5 2.25a.75.75 0 000 1.114l2.5 2.25a.75.75 0 101.004-1.114l-1.048-.943h9.546A.75.75 0 0019 10z" clip-rule="evenodd" />
+                    </svg>
+
+                    <small class="ms-2">Logout</small>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+
+    <main style="margin-left: 230px;">
+        <div class="container-fluid container-fluid px-3 py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 rounded-4" style="background-color: #fcc9c9;">
+                        <div class="card-body">
+                            <small>Total harga produk</small>
+                            <strong class="d-block fs-3">Rp 5.000.000</strong>
+
+                            <div class="mt-3 d-flex justify-content-between align-items-center">
+                                <div class="text-dark fw-bold btn btn-light">
+                                    Produk <span class="badge bg-primary ms-2">50</span>
+                                </div>
+                                <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
+                                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 rounded-4" style="background-color: #F9D0B6;">
+                        <div class="card-body">
+                            <small>Total pesanan</small>
+                            <strong class="d-block fs-3">Rp 5.000.000</strong>
+
+                            <div class="mt-3 d-flex justify-content-between align-items-center">
+                                <div class="text-dark fw-bold btn btn-light">
+                                    Pesanan <span class="badge bg-primary ms-2">87</span>
+                                </div>
+                                <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
+                                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 rounded-4" style="background: rgb(130,198,206);
+background: linear-gradient(29deg, rgba(130,198,206,0.76234243697479) 0%, rgba(108,193,114,0.7231267507002801) 100%);">
+                        <div class="card-body">
+                            <small>Costumer terdaftar</small>
+                            <strong class="d-block fs-3">Rp 5.000.000</strong>
+
+                            <div class="mt-3 d-flex justify-content-between align-items-center">
+                                <div class="text-dark fw-bold btn btn-light">
+                                    Administrator <span class="badge bg-primary ms-2">5</span>
+                                </div>
+                                <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
+                                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <!-- Primary JS -->
+    <script src="<?php echo assets('js/eleven.js'); ?>"></script>
+</body>
+
+</html>
