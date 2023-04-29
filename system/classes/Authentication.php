@@ -58,6 +58,8 @@ class Authentication extends Database
             return;
         }
 
+        // Tambahkan terakhir kali login
+
 
         /** 
          * Verivikasi password
@@ -66,6 +68,11 @@ class Authentication extends Database
             // Feedback
             echo json_encode(['status' => 'error', 'message' => 'Email/password salah.']);
         } else {
+
+            if ($user->status_activation == 0) {
+                echo json_encode(['status' => 'warning', 'message' => 'Akun belum aktif.']);
+                return;
+            }
 
             // buat Sesi user
             $this->setUserSession($user);

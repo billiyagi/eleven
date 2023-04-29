@@ -1,5 +1,8 @@
 <?php
 require_once('../system/bootstrap.php');
+require_once('session_admin.php');
+
+$titlePage = 'Product Collections';
 require_once('../system/templates/admin/header.php');
 require_once('../system/templates/admin/side_menu.php');
 
@@ -133,8 +136,8 @@ if (isset($_GET['id'])) :
                                                 <td><?php echo $number; ?></td>
                                                 <td><?php echo $product->kode; ?></td>
                                                 <td><?php echo $product->nama; ?></td>
-                                                <td><?php echo $product->harga_jual; ?></td>
-                                                <td><?php echo $product->harga_beli; ?></td>
+                                                <td>Rp <?php echo toRupiah($product->harga_jual); ?></td>
+                                                <td>Rp <?php echo toRupiah($product->harga_beli); ?></td>
                                                 <td><?php echo $product->stok; ?></td>
                                                 <td><?php echo $product->tipe; ?></td>
                                                 <td><?php echo $product->ukuran; ?></td>

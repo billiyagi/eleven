@@ -272,3 +272,27 @@ $('.delete-btn').click(function () {
         }
     })
 })
+
+$('.user-active').click(function () {
+    Swal.fire({
+        title: 'Nonaktifkan Pengguna?',
+        showCancelButton: true,
+        confirmButtonText: 'Nonaktifkan',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $(this).parent().submit();
+        }
+    })
+})
+
+$('.user-non-active').click(function () {
+    Swal.fire({
+        title: 'Aktifkan Pengguna?',
+        showCancelButton: true,
+        confirmButtonText: 'Aktifkan',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $(this).parent().submit();
+        }
+    })
+})

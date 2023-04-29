@@ -1,9 +1,17 @@
 <?php
 require_once('../../system/bootstrap.php');
+$typeProduct = $typesProductModel->get($_GET['id']);
+
+if (empty($typeProduct)) {
+    header('Location: ' . BASE_URL_ADMIN . 'type/index.php');
+}
+
+require_once('../session_admin.php');
+
+$titlePage = 'Update Product Type';
 require_once('../../system/templates/admin/header.php');
 require_once('../../system/templates/admin/side_menu.php');
 
-$typeProduct = $typesProductModel->get($_GET['id']);
 ?>
 
 <main id="adminMainContent">

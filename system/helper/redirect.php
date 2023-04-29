@@ -19,3 +19,14 @@ function active($page)
 {
     return ($_SERVER['PHP_SELF'] == '/eleven/admin/' . $page) ? 'menu-active' : '';
 }
+
+function toNumeric($str)
+{
+    $result = explode(',', $str);
+    return implode('', $result);
+}
+
+function toRupiah($numeric)
+{
+    return number_format($numeric, 0, ',');
+}

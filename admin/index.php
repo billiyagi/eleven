@@ -1,5 +1,8 @@
 <?php
 require_once('../system/bootstrap.php');
+require_once('session_admin.php');
+
+$titlePage = 'Fashion Dashboard';
 require_once('../system/templates/admin/header.php');
 require_once('../system/templates/admin/side_menu.php');
 ?>
@@ -20,7 +23,7 @@ require_once('../system/templates/admin/side_menu.php');
                                 Produk <span class="badge bg-primary ms-2">50</span>
                             </div>
                             <div class="text-dark fw-bold btn btn-light">
-                                Kategori <span class="badge bg-primary ms-2">5</span>
+                                Kategori <span class="badge bg-secondary ms-2">5</span>
                             </div>
                             <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
                                     <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
@@ -38,7 +41,7 @@ require_once('../system/templates/admin/side_menu.php');
 
                         <div class="mt-3 d-flex justify-content-between align-items-center">
                             <div class="text-dark fw-bold btn btn-light">
-                                Pesanan <span class="badge bg-primary ms-2">87</span>
+                                Pesanan <span class="badge bg-info ms-2">87</span>
                             </div>
                             <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
                                     <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
@@ -56,7 +59,7 @@ require_once('../system/templates/admin/side_menu.php');
 
                         <div class="mt-3 d-flex justify-content-between align-items-center">
                             <div class="text-dark fw-bold btn btn-light">
-                                Administrator <span class="badge bg-primary ms-2">5</span>
+                                Administrator <span class="badge bg-warning ms-2">5</span>
                             </div>
                             <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
                                     <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />

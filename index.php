@@ -1,5 +1,4 @@
 <?php require_once('system/templates/landing/header.php'); ?>
-
 <?php require_once('system/templates/landing/navbar.php'); ?>
 
 <main class="mt-2 mt-md-5">

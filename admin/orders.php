@@ -1,5 +1,8 @@
 <?php
 require_once('../system/bootstrap.php');
+require_once('session_admin.php');
+
+$titlePage = 'Orders of Products';
 require_once('../system/templates/admin/header.php');
 require_once('../system/templates/admin/side_menu.php');
 ?>

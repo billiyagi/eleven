@@ -33,7 +33,12 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
+    <!-- CK Editor -->
     <script src="https://cdn.ckeditor.com/4.21.0/basic/ckeditor.js"></script>
+
+    <!-- Cleave -->
+    <script src="<?php echo assets('js/cleave/cleave.min.js'); ?>"></script>
+
     <!-- Primary CSS -->
     <link rel="stylesheet" href="<?php echo assets('css/eleven.css'); ?>">
 
@@ -52,8 +57,8 @@
         </div>
         <div id="titlePage" class="container-fluid px-3 py-4 d-block d-md-flex justify-content-md-between align-items-center">
             <div class="ms-3">
-                <h2 class="fw-bolder">Fashion Dashboard</h2>
-                <p class="fw-lighter fs-6 m-0 p-0">Selamat datang, Billiyagi!</p>
+                <h2 class="fw-bolder"><?php echo $titlePage; ?></h2>
+                <p class="fw-lighter fs-6 m-0 p-0">Selamat datang, <?php echo $_SESSION['userEleven']['first_name']; ?>!</p>
             </div>
             <div class="d-md-flex justify-content-center align-items-center mb-4 mt-3 mt-md-0 d-none">
                 <img src="" alt="Gambar Cuaca" id="weatherIcon" style="width: 30px; height: 30px;" class="me-3">

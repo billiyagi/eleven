@@ -1,10 +1,18 @@
 <?php
 require_once('../../system/bootstrap.php');
+$product = $productsModel->get($_GET['id']);
+$size = ['S', 'M', 'L', 'XL', 'XXL'];
+
+if (empty($product)) {
+    return header('Location: ' . BASE_URL_ADMIN . 'products.php');
+}
+
+require_once('../session_admin.php');
+
+$titlePage = 'Update Product';
 require_once('../../system/templates/admin/header.php');
 require_once('../../system/templates/admin/side_menu.php');
 
-$product = $productsModel->get($_GET['id']);
-$size = ['S', 'M', 'L', 'XL', 'XXL'];
 ?>
 
 
@@ -33,12 +41,12 @@ $size = ['S', 'M', 'L', 'XL', 'XXL'];
                             </div>
                             <div class="mb-3">
                                 <label for="sales" class="form-label">Harga jual</label>
-                                <input type="number" name="sale_price" id="sales" class="form-control" value="<?php echo $product->harga_jual; ?>">
+                                <input type="text" name="sale_price" id="sales" class="form-control" value="<?php echo $product->harga_jual; ?>">
                                 <?php echo getFlashValidation('sale_price'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="purchase" class="form-label">Harga Pembelian</label>
-                                <input type="number" name="purchase_price" id="purchase" class="form-control" value="<?php echo $product->harga_beli; ?>">
+                                <input type="text" name="purchase_price" id="purchase" class="form-control" value="<?php echo $product->harga_beli; ?>">
                                 <?php echo getFlashValidation('purchase_price'); ?>
                             </div>
                             <div class="mb-3">
@@ -108,5 +116,17 @@ $size = ['S', 'M', 'L', 'XL', 'XXL'];
     }
 
     CKEDITOR.replace('editor');
+    var cleave = new Cleave('#sales', {
+        numeral: true,
+        delimiters: ['.', '.', '-'],
+        blocks: [3, 3, 3, 2],
+        numeralThousandsGroupStyle: 'thousand'
+    });
+    var cleave = new Cleave('#purchase', {
+        numeral: true,
+        delimiters: ['.', '.', '-'],
+        blocks: [3, 3, 3, 2],
+        numeralThousandsGroupStyle: 'thousand'
+    });
 </script>
 <?php require_once('../../system/templates/admin/footer.php') ?>

@@ -1,11 +1,14 @@
 <?php
 require_once('../../system/bootstrap.php');
+require_once('../session_admin.php');
+
+$titlePage = 'Type of Products';
 require_once('../../system/templates/admin/header.php');
 require_once('../../system/templates/admin/side_menu.php');
 ?>
 
 <main id="adminMainContent">
-    <div class="container-fluid px-3 py-4" style="height: 480px;">
+    <div class="container-fluid px-3 py-4">
         <div class="row">
             <div class="col-md-12">
                 <a href="create.php" class="btn btn-primary mb-3">Tambah Kategori</a>

@@ -42,6 +42,9 @@ class ProductsModel extends Database
 
     public function create($product, $file)
     {
+        $product['sale_price'] = toNumeric($product['sale_price']);
+        $product['purchase_price'] = toNumeric($product['purchase_price']);
+
         // Validation Rules
         $createValidation = $this->security->validation()->validate($product + $file, [
             'name'              => 'required',
@@ -116,6 +119,9 @@ class ProductsModel extends Database
 
     public function update($product, $file)
     {
+        $product['sale_price'] = toNumeric($product['sale_price']);
+        $product['purchase_price'] = toNumeric($product['purchase_price']);
+
         // Validation Rules
         $updateValidation = $this->security->validation()->validate($product + $file, [
             'name'              => 'required',

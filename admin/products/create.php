@@ -1,5 +1,8 @@
 <?php
 require_once('../../system/bootstrap.php');
+require_once('../session_admin.php');
+
+$titlePage = 'Create Product';
 require_once('../../system/templates/admin/header.php');
 require_once('../../system/templates/admin/side_menu.php');
 ?>
@@ -29,12 +32,12 @@ require_once('../../system/templates/admin/side_menu.php');
                             </div>
                             <div class="mb-3">
                                 <label for="sales" class="form-label">Harga jual</label>
-                                <input type="number" name="sale_price" id="sales" class="form-control">
+                                <input type="text" name="sale_price" id="sales" class="form-control">
                                 <?php echo getFlashValidation('sale_price'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="purchase" class="form-label">Harga Pembelian</label>
-                                <input type="number" name="purchase_price" id="purchase" class="form-control">
+                                <input type="text" name="purchase_price" id="purchase" class="form-control">
                                 <?php echo getFlashValidation('purchase_price'); ?>
                             </div>
                             <div class="mb-3">
@@ -98,5 +101,17 @@ require_once('../../system/templates/admin/side_menu.php');
     }
 
     CKEDITOR.replace('editor');
+    var cleave = new Cleave('#sales', {
+        numeral: true,
+        delimiters: ['.', '.', '-'],
+        blocks: [3, 3, 3, 2],
+        numeralThousandsGroupStyle: 'thousand'
+    });
+    var cleave = new Cleave('#purchase', {
+        numeral: true,
+        delimiters: ['.', '.', '-'],
+        blocks: [3, 3, 3, 2],
+        numeralThousandsGroupStyle: 'thousand'
+    });
 </script>
 <?php require_once('../../system/templates/admin/footer.php') ?>

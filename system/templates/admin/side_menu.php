@@ -38,7 +38,7 @@
             </a>
         </li>
         <li class="nav-item mb-3">
-            <a class="nav-link rounded-3 aside-btn-eleven <?php echo active('users.php'); ?>" aria-current="page" href="<?php echo BASE_URL_ADMIN . 'users.php'; ?>">
+            <a class="nav-link rounded-3 aside-btn-eleven <?php echo active('users.php') . active('users/update.php') . active('users/create.php') ?>" aria-current="page" href="<?php echo BASE_URL_ADMIN . 'users.php'; ?>">
                 <div class="d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px">
                         <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
@@ -57,13 +57,13 @@
             <small class="fw-lighter"><?php echo $_SESSION['userEleven']['email']; ?></small>
         </div>
         <div class="d-flex justify-content-between">
-            <div class="d-flex align-items-center btn btn-outline-secondary me-2">
+            <a href="<?php echo BASE_URL_LANDING; ?>" class="d-flex align-items-center btn btn-outline-secondary me-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;" class="fw-bold">
                     <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd" />
                 </svg>
 
                 <small class="ms-2">Home</small>
-            </div>
+            </a>
 
             <form action="<?php echo BASE_URL_SYSTEM . 'request.php'; ?>" method="post" id="logoutForm">
                 <input type="hidden" name="user_logout" value="logout">

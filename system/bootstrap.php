@@ -3,7 +3,6 @@ session_start();
 
 // Core Configuration
 require_once('core/config.php');
-require_once('session.php');
 require_once('core/Database.php');
 
 // Autoload Class
@@ -25,3 +24,4 @@ require_once($dir . '/vendor/autoload.php');
 
 $productsModel = new ProductsModel();
 $typesProductModel = new TypesProductModel();
+$userModel = new UsersModel();
