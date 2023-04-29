@@ -4,8 +4,9 @@ $currentPageVisited = PROTOCOL . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'];
 /** 
  * Periksa Kondisi login pengguna
  */
-
-
+$currentPageVisited = explode('/', $currentPageVisited);
+array_pop($currentPageVisited);
+$currentPageVisited = implode('/', $currentPageVisited)  . '/';
 // Kondisi ketika belum login
 if (!isset($_SESSION['userEleven']) && $currentPageVisited == BASE_URL_ADMIN) {
     header('Location: ' . BASE_URL_LANDING);

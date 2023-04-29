@@ -58,9 +58,6 @@ class UsersModel extends Database
      */
     public function insertUser(array $user, $json = false)
     {
-        $this->security->validation()->setMessages([
-            'required'
-        ]);
 
         $userInsertValidation = $this->security->validation()->validate($user, [
             'first_name' => 'required',

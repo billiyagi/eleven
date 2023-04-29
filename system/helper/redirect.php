@@ -14,3 +14,8 @@ function assets($path)
 {
     return BASE_URL_ASSETS . "$path";
 }
+
+function active($page)
+{
+    return ($_SERVER['PHP_SELF'] == '/eleven/admin/' . $page) ? 'menu-active' : '';
+}

@@ -17,6 +17,69 @@ $(document).ready(function () {
     $('#menuOpenBtn').click(function () {
         $('#menu').addClass('menu-open').removeClass('menu-close');
     });
+
+
+    if (window.location.pathname == '/eleven/admin/index.php' || window.location.pathname == '/admin/index.php') {
+        if ($(window).width() <= 768) {
+            $('#adminMenuBtnIcon').addClass('fa-arrow-right').removeClass('fa-bars');
+            $('#adminMenuBtn').addClass('menu-hide btn-lg');
+            $('#titlePage').addClass('title-move');
+        }
+    }
+
+
+    /** 
+     * Humberger menu admin action
+    */
+    $('#adminMenuBtn').click(function () {
+
+        // Mobile
+        if ($(window).width() <= 768) {
+
+            // Kondisi menu ditutup
+            if ($(this).hasClass('menu-hide')) {
+                $('#adminMenuBtnIcon').removeClass('fa-arrow-right').addClass('fa-bars');
+                $(this).removeClass('menu-hide').removeClass('btn-lg');
+                // $('#adminMenu').removeClass('menu-open');
+                $('#adminMenu').addClass('menu-open');
+                // $('#adminTopBar').removeClass('admin-menu-close');
+                // $('#adminMainContent').removeClass('admin-menu-close');
+                // $('#adminFooter').removeClass('admin-menu-close');
+                // $('#titlePage').removeClass('title-move');
+                // Kondisi menu dibuka
+            } else {
+                $('#titlePage').addClass('title-move');
+                $('#adminMenuBtnIcon').removeClass('fa-bars').addClass('fa-arrow-right');
+                $(this).addClass('menu-hide btn-lg');
+                $('#adminMenu').removeClass('menu-open');
+                // $('#adminTopBar').addClass('admin-menu-close');
+                // $('#adminMainContent').addClass('admin-menu-close');
+                // $('#adminFooter').addClass('admin-menu-close');
+            }
+
+            // Desktop
+        } else {
+            // Kondisi menu ditutup
+            if ($(this).hasClass('menu-hide')) {
+                $('#adminMenuBtnIcon').removeClass('fa-arrow-right').addClass('fa-bars');
+                $(this).removeClass('menu-hide').removeClass('btn-lg');
+                $('#adminMenu').removeClass('menu-close');
+                $('#adminTopBar').removeClass('admin-menu-close');
+                $('#adminMainContent').removeClass('admin-menu-close');
+                $('#adminFooter').removeClass('admin-menu-close');
+                $('#titlePage').removeClass('title-move');
+                // Kondisi menu dibuka
+            } else {
+                $('#titlePage').addClass('title-move');
+                $('#adminMenuBtnIcon').removeClass('fa-bars').addClass('fa-arrow-right');
+                $(this).addClass('menu-hide btn-lg');
+                $('#adminMenu').addClass('menu-close');
+                $('#adminTopBar').addClass('admin-menu-close');
+                $('#adminMainContent').addClass('admin-menu-close');
+                $('#adminFooter').addClass('admin-menu-close');
+            }
+        }
+    })
 });
 
 const loadingButton = function (buttonId) {
@@ -164,18 +227,48 @@ $('#signInForm').submit(function (event) {
             }
         },
         error: function (textStatus, errorThrown) {
-            console.log(textStatus);
-            // alert('Terjadi Kesalahan, Mohon muat ulang halaman ini.');
+            alert('Terjadi Kesalahan, Mohon muat ulang halaman ini.');
         }
     })
 })
 
 
+/** 
+ * Cuaca API
+*/
 $.getJSON("http://api.weatherapi.com/v1/current.json?key=71441368a2594f4a925103250232704&q=Bogor",
     function (weather) {
         $('#weatherLocation').text(`${weather.location.name}, ${weather.location.country}`)
         $('#weatherTemperature').text(`Suhu ${weather.current.temp_c} C`)
         $('#weatherIcon').attr('src', `https:${weather.current.condition.icon}`);
-        console.log(weather)
     }
 );
+
+/** 
+ * Logout
+*/
+
+$('#logoutBtn').click(function (e) {
+    Swal.fire({
+        title: 'Keluar dari aplikasi?',
+        showCancelButton: true,
+        confirmButtonText: 'Logout',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $('#logoutForm').submit();
+        }
+    })
+})
+
+$('.delete-btn').click(function () {
+    Swal.fire({
+        title: 'Hapus data?',
+        text: 'Data yang dihapus tidak akan bisa dipulihkan kembali',
+        showCancelButton: true,
+        confirmButtonText: 'Hapus',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $(this).parent().submit();
+        }
+    })
+})

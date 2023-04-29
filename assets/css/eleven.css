@@ -1,5 +1,5 @@
 * {
-    transition: all 0.3s;
+    transition: all 0.1s;
 }
 body {
     font-family: 'Noto Sans', sans-serif;
@@ -117,8 +117,77 @@ header {
     color: #000;
 }
 
+.aside-btn-eleven {
+    color: #000;
+}
 .aside-btn-eleven:hover {
     transition: 0s !important;
     background-color: #212529;
     color: #fff !important;
+    border-radius: 5px;
+}
+
+
+
+/* 
+    Admin Area
+*/
+#adminTopBar {
+    margin-left: 220px;
+
+}
+
+#adminMenu {
+    width: 220px; 
+    background: rgb(255,255,255);
+    background: linear-gradient(29deg, rgba(255,255,255,0.76234243697479) 0%, rgba(108,154,193,0.22452731092436973) 100%); backdrop-filter: blur(5px); 
+    z-index: 90;
+}
+
+#adminMainContent {
+    margin-left: 220px;
+}
+
+#adminFooter {
+    padding-left: 220px;
+    z-index: 80;
+}
+
+@media (max-width: 768px) {
+    aside {
+        transform: translateX(-100%);
+    }
+    #adminTopBar, #adminMainContent {
+        margin-left: 0px;
+    
+    }
+    #adminFooter {
+        padding-left: 0px !important;
+    }
+}
+
+#adminMenuBtn {
+    position: fixed;
+    top: 30px;
+    left: 200px;
+    z-index: 100;
+}
+.admin-menu-close {
+    margin-left: 0px !important;
+}
+
+.admin-menu-open {
+    margin-left: 220px !important;
+}
+
+.menu-hide {
+    left: -20px !important;
+}
+.title-move {
+    padding-left: 50px !important;
+}
+.menu-active {
+    background-color: #212529 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
 }

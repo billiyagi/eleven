@@ -9,9 +9,17 @@ define('APP_HOST', PROTOCOL . 'billiyagi.test');
 
 // APP URL Configuration
 define('BASE_URL_LANDING', APP_HOST . '/eleven/index.php');
-define('BASE_URL_ADMIN', APP_HOST . '/eleven/admin/index.php');
-define('BASE_URL_CLIENT', APP_HOST . '/eleven/client/index.php');
+define('BASE_URL_ADMIN', APP_HOST . '/eleven/admin/');
+
+define('BASE_URL_CLIENT', APP_HOST . '/eleven/client/');
 define('BASE_URL_ASSETS', APP_HOST . '/eleven/assets/');
+define('BASE_URL_SYSTEM', APP_HOST . '/eleven/system/');
+
+$uploaded_dir = explode('/', __DIR__);
+array_pop($uploaded_dir);
+array_pop($uploaded_dir);
+
+define('URL_UPLOADED_FILE', $uploaded_dir);
 
 // Directory PATH
 $dir = __DIR__;

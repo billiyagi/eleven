@@ -21,3 +21,7 @@ array_pop($dir);
 $dir = implode('/', $dir);
 
 require_once($dir . '/vendor/autoload.php');
+
+
+$productsModel = new ProductsModel();
+$typesProductModel = new TypesProductModel();
