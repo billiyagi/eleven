@@ -76,7 +76,7 @@ require_once('../../system/templates/admin/side_menu.php');
                                         <option value="<?php echo $typeProduct->id; ?>"><?php echo $typeProduct->nama; ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <?php echo getFlashValidation('thumbnail'); ?>
+                                <?php echo getFlashValidation('category_id'); ?>
                             </div>
                             <div class="mt-5 d-flex justify-content-end">
                                 <button type="submit" name="create_product" class="btn btn-primary">Tambah Produk</button>

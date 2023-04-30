@@ -15,9 +15,14 @@ class ProductsModel extends Database
      * @method getAll
      * * Mengambil semua data produk
      */
-    public function getAll()
+    public function getAll($limit = 0)
     {
-        $getProductsStmt = $this->db->prepare("SELECT produk.id, produk.kode, produk.nama, produk.harga_jual, produk.harga_beli, produk.stok, produk.min_stok, produk.deskripsi, produk.ukuran, produk.image, kategori_produk.nama AS tipe FROM produk INNER JOIN kategori_produk ON produk.kategori_produk_id = kategori_produk.id ORDER BY produk.id DESC");
+        if ($limit == 0) {
+            $getProductsStmt = $this->db->prepare("SELECT produk.id, produk.kode, produk.nama, produk.harga_jual, produk.harga_beli, produk.stok, produk.min_stok, produk.deskripsi, produk.ukuran, produk.image, kategori_produk.nama AS tipe FROM produk INNER JOIN kategori_produk ON produk.kategori_produk_id = kategori_produk.id ORDER BY produk.id DESC");
+        } else {
+            $getProductsStmt = $this->db->prepare("SELECT produk.id, produk.kode, produk.nama, produk.harga_jual, produk.harga_beli, produk.stok, produk.min_stok, produk.deskripsi, produk.ukuran, produk.image, kategori_produk.nama AS tipe FROM produk INNER JOIN kategori_produk ON produk.kategori_produk_id = kategori_produk.id ORDER BY produk.id DESC LIMIT $limit");
+        }
+
 
         $getProductsStmt->execute();
         $getProducts = $getProductsStmt->fetchAll(PDO::FETCH_OBJ);

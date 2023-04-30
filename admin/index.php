@@ -25,7 +25,7 @@ require_once('../system/templates/admin/side_menu.php');
                             <div class="text-dark fw-bold btn btn-light">
                                 Kategori <span class="badge bg-secondary ms-2">5</span>
                             </div>
-                            <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
+                            <a href="products.php" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
                                     <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
                                 </svg>
                             </a>
@@ -43,7 +43,7 @@ require_once('../system/templates/admin/side_menu.php');
                             <div class="text-dark fw-bold btn btn-light">
                                 Pesanan <span class="badge bg-info ms-2">87</span>
                             </div>
-                            <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
+                            <a href="orders.php" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
                                     <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
                                 </svg>
                             </a>
@@ -61,7 +61,7 @@ require_once('../system/templates/admin/side_menu.php');
                             <div class="text-dark fw-bold btn btn-light">
                                 Administrator <span class="badge bg-warning ms-2">5</span>
                             </div>
-                            <a href="#" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
+                            <a href="users.php" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px" class="pb-1">
                                     <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
                                 </svg>
                             </a>

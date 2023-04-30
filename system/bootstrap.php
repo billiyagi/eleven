@@ -25,3 +25,6 @@ require_once($dir . '/vendor/autoload.php');
 $productsModel = new ProductsModel();
 $typesProductModel = new TypesProductModel();
 $userModel = new UsersModel();
+$orderModel = new OrdersModel();
+$costumerAddressModel = new CostumersAddressModel();
+$costumerCartModel = new CostumersCartModel();

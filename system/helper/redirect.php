@@ -17,8 +17,9 @@ function assets($path)
 
 function active($page)
 {
-    return ($_SERVER['PHP_SELF'] == '/eleven/admin/' . $page) ? 'menu-active' : '';
+    return ($_SERVER['PHP_SELF'] == URL_ADMIN . $page) ? 'menu-active' : '';
 }
+
 
 function toNumeric($str)
 {
@@ -29,4 +30,9 @@ function toNumeric($str)
 function toRupiah($numeric)
 {
     return number_format($numeric, 0, ',');
+}
+
+function excerpt($string, $length = null)
+{
+    return substr($string, 0, $length);
 }

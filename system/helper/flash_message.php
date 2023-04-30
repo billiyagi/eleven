@@ -1,11 +1,12 @@
 <?php
 
 
-function setFlashMessage($message, $type = 'success')
+function setFlashMessage($message, $type = 'success', $text = '')
 {
     $_SESSION['flash_message'] = [
         'message' => $message,
-        'type' => $type
+        'type' => $type,
+        'text' => $text
     ];
 }
 
@@ -17,6 +18,7 @@ function getFlashMessage()
             <script>
                 Swal.fire({
                     icon: '" . $_SESSION['flash_message']['type'] . "',
+                    text: '" . $_SESSION['flash_message']['text'] . "',
                     title: '" . $_SESSION['flash_message']['message'] . "'
                     })
             </script>

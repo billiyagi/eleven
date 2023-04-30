@@ -54,96 +54,23 @@
                 <a href="#" class="btn btn-lg btn-outline-dark rounded-0 border-3 d-md-block d-none">Lihat Semua <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="row mt-4 gy-4">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="card border-dark-hover rounded-0">
-                        <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
-                        <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
-                            <h5 class="card-title m-0 fw-light pt-2">Rp. 450.000</h5>
-                            <hr class="my-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="fw-bold">Yellow jaket versity</div>
-                                <i class="fas fa-shopping-cart"></i>
+                <?php foreach ($productsModel->getAll(6) as $product) : ?>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a href="<?php echo BASE_URL_LANDING . 'product.php?id=' . $product->id; ?>" class="card border-dark-hover rounded-0">
+                            <img src="<?php echo assets('uploads/' . $product->image); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
+                            <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
+                                <h5 class="card-title m-0 fw-light pt-2">Rp. <?php echo toRupiah($product->harga_jual); ?></h5>
+                                <hr class="my-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="fw-bold"><?php echo $product->nama; ?></div>
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <small class="fw-light d-block mb-2"><?php echo excerpt($product->deskripsi, 70); ?></small>
+                                <small class="badge bg-secondary rounded-0"><?php echo $product->tipe; ?></small>
                             </div>
-                            <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
-                            <small class="badge bg-secondary rounded-0">Jaket</small>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="card border-dark-hover rounded-0">
-                        <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
-                        <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
-                            <h5 class="card-title m-0 fw-light pt-2">Rp. 450.000</h5>
-                            <hr class="my-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="fw-bold">Yellow jaket versity</div>
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
-                            <small class="badge bg-secondary rounded-0">Jaket</small>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="card border-dark-hover rounded-0">
-                        <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
-                        <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
-                            <h5 class="card-title m-0 fw-light pt-2">Rp. 450.000</h5>
-                            <hr class="my-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="fw-bold">Yellow jaket versity</div>
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
-                            <small class="badge bg-secondary rounded-0">Jaket</small>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="card border-dark-hover rounded-0">
-                        <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
-                        <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
-                            <h5 class="card-title m-0 fw-light pt-2">Rp. 450.000</h5>
-                            <hr class="my-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="fw-bold">Yellow jaket versity</div>
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
-                            <small class="badge bg-secondary rounded-0">Jaket</small>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="card border-dark-hover rounded-0">
-                        <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
-                        <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
-                            <h5 class="card-title m-0 fw-light pt-2">Rp. 450.000</h5>
-                            <hr class="my-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="fw-bold">Yellow jaket versity</div>
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
-                            <small class="badge bg-secondary rounded-0">Jaket</small>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="card border-dark-hover rounded-0">
-                        <img src="<?php echo assets('img/hero.jpg'); ?>" class="card-img-top rounded-0 img-fit" alt="..." height="400px">
-                        <div class="card-body position-absolute bottom-0 bg-white w-100 text-dark px-2">
-                            <h5 class="card-title m-0 fw-light pt-2">Rp. 450.000</h5>
-                            <hr class="my-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="fw-bold">Yellow jaket versity</div>
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
-                            <small class="badge bg-secondary rounded-0">Jaket</small>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn btn-lg btn-outline-dark rounded-0 border-3 d-md-none d-inline-block mt-5">Lihat Semua <i class="fas fa-arrow-right"></i></a>

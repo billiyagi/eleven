@@ -163,7 +163,7 @@ class UsersModel extends Database
         }
     }
 
-    public function update($user, $isEditRole = false)
+    public function update($user, $isEditRole = false, $costumer = false)
     {
         $userUpdateValidation = $this->security->validation()->validate($user, [
             'first_name' => 'required',
@@ -172,8 +172,13 @@ class UsersModel extends Database
         ]);
 
         if ($userUpdateValidation->fails()) {
-            setFlashValidation($userUpdateValidation->errors()->firstOfAll());
-            return header('Location: ' . BASE_URL_ADMIN . 'users/update.php?id=' . $user['id']);
+            if ($costumer) {
+                setFlashValidation($userUpdateValidation->errors()->firstOfAll());
+                return header('Location: ' . URL_CLIENT . 'settings.php');
+            } else {
+                setFlashValidation($userUpdateValidation->errors()->firstOfAll());
+                return header('Location: ' . BASE_URL_ADMIN . 'users/update.php?id=' . $user['id']);
+            }
         }
 
         // Periksa edit role di izinkan
@@ -206,11 +211,21 @@ class UsersModel extends Database
 
 
         if ($userUpdateStmt->execute()) {
-            setFlashMessage('Pengguna berhasil diubah');
-            return header('Location: ' . BASE_URL_ADMIN . 'users.php');
+            if ($costumer) {
+                setFlashMessage('Pengguna berhasil diubah', 'success', 'Login ulang untuk melihat perubahan');
+                return header('Location: ' . URL_CLIENT . 'settings.php');
+            } else {
+                setFlashMessage('Pengguna berhasil diubah', 'success', 'Login ulang untuk melihat perubahan');
+                return header('Location: ' . BASE_URL_ADMIN . 'users.php');
+            }
         } else {
-            setFlashMessage('Pengguna gagal diubah');
-            return header('Location: ' . BASE_URL_ADMIN . 'users.php');
+            if ($costumer) {
+                setFlashMessage('Pengguna gagal diubah');
+                return header('Location: ' . URL_CLIENT . 'settings.php');
+            } else {
+                setFlashMessage('Pengguna gagal diubah');
+                return header('Location: ' . BASE_URL_ADMIN . 'users.php');
+            }
         }
     }
 

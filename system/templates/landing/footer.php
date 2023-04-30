@@ -1,14 +1,5 @@
 <footer class="bg-dark">
-    <div class="container text-light text-center">
-        <div class="nav justify-content-around">
-            <a href="<?php echo BASE_URL_LANDING; ?>" class="nav-link p-4 text-light">Beranda</a>
-            <a href="products.php" class="nav-link p-4 text-light">Produk</a>
-            <a href="reseller.php" class="nav-link p-4 text-light">Reseller</a>
-            <a href="about.php" class="nav-link p-4 text-light">Tentang</a>
-        </div>
-        <p class="py-5 m-0">Sistem Website E-commerce bertema menjual pakaian dengan gaya desain yang unik.</p>
-    </div>
-    <div style="background-color: #000;" class="p-3 text-center text-light">
+    <div class="p-3 text-center text-light bg-dark">
         &copy; <?php echo date('Y') ?> Copyright <strong>eleven</strong> by <a href="https://billiyagi.space">Febry Billiyagi</a>
     </div>
 </footer>
@@ -117,3 +108,4 @@
 </body>
 
 </html>
+<?php destroyFlashValidation(); ?>

@@ -250,7 +250,7 @@ $.getJSON("http://api.weatherapi.com/v1/current.json?key=71441368a2594f4a9251032
 
 $('#logoutBtn').click(function (e) {
     Swal.fire({
-        title: 'Keluar dari aplikasi?',
+        title: 'Keluar dari akun?',
         showCancelButton: true,
         confirmButtonText: 'Logout',
     }).then((result) => {

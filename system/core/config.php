@@ -8,12 +8,15 @@ define('PROTOCOL', $protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://'
 define('APP_HOST', PROTOCOL . 'billiyagi.test');
 
 // APP URL Configuration
-define('BASE_URL_LANDING', APP_HOST . '/eleven/index.php');
+define('BASE_URL_LANDING', APP_HOST . '/eleven/');
 define('BASE_URL_ADMIN', APP_HOST . '/eleven/admin/');
 
 define('BASE_URL_CLIENT', APP_HOST . '/eleven/client/');
 define('BASE_URL_ASSETS', APP_HOST . '/eleven/assets/');
 define('BASE_URL_SYSTEM', APP_HOST . '/eleven/system/');
+
+define('URL_CLIENT', '/eleven/client/');
+define('URL_ADMIN', '/eleven/admin/');
 
 $uploaded_dir = explode('/', __DIR__);
 array_pop($uploaded_dir);

@@ -18,7 +18,7 @@
                 <?php if (isset($_SESSION['userEleven'])) : ?>
                     <?php if ($_SESSION['userEleven']['role'] == 1) : ?>
                         <div class="d-flex">
-
+                            <a href="admin/index.php" class="btn btn-dark">Dashboard</a>
                         </div>
                     <?php elseif ($_SESSION['userEleven']['role'] == 2) : ?>
                         <div class="d-flex align-items-center">
@@ -27,20 +27,21 @@
                                     Hi, <?php echo $_SESSION['userEleven']['first_name']; ?>
                                 </button>
                                 <ul class="dropdown-menu pt-2 pb-0">
-                                    <li><a class="dropdown-item" href="client/order.php">Pesanan</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo BASE_URL_CLIENT . 'index.php'; ?>">Pesanan</a></li>
                                     <li>
-                                        <a class="dropdown-item mb-2" href="client/cart.php">
+                                        <a class="dropdown-item mb-2" href="<?php echo BASE_URL_CLIENT . 'cart.php'; ?>">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 Keranjang
-                                                <span class="badge text-bg-primary">4</span>
+                                                <span class="badge text-bg-primary"><?php echo $costumerCartModel->getCostumerTotalCart($_SESSION['userEleven']['id'])->total; ?></span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <form action="system/request.php" method="post" class="dropdown-item p-0">
+                                        <form action="<?php echo BASE_URL_SYSTEM . 'request.php'; ?>" method="post" class="dropdown-item p-0" id="logoutForm">
+                                            <input type="hidden" name="user_logout">
                                             <div class="d-flex justify-content-between">
-                                                <a href="client/profile.php" class="d-block w-50 border-0 bg-secondary text-light py-2 px-3 text-decoration-none" style="border-bottom-left-radius: 3px;"><i class="fas fa-user-circle"></i> Profile</a>
-                                                <button type="submit" name="user_logout" class="d-block w-50 border-0 bg-danger text-light py-2 px-3" style="border-bottom-right-radius: 3px;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                                                <a href="<?php echo URL_CLIENT . 'settings.php'; ?>" class="d-block w-50 border-0 bg-secondary text-light py-2 px-3 text-decoration-none" style="border-bottom-left-radius: 3px;"><i class="fas fa-user-cog"></i> Settings</a>
+                                                <a href="#" class="d-block w-50 border-0 bg-danger text-light py-2 px-3 text-decoration-none" style="border-bottom-right-radius: 3px;" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                             </div>
                                         </form>
                                     </li>

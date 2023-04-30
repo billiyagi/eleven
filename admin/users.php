@@ -16,7 +16,7 @@ require_once('../system/templates/admin/side_menu.php');
                 <a href="users/create.php" class="btn btn-primary mb-3">Tambah Pengguna</a>
                 <div class="card mb-5">
                     <div class="card-header">
-                        Administrator <span class="badge bg-primary"><?php echo count($userModel->getAllByRoleCostumer()); ?></span>
+                        Administrator <span class="badge bg-primary"><?php echo count($userModel->getAllByRoleAdmin()); ?></span>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
