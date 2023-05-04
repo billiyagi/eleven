@@ -40,7 +40,7 @@
 
     <div id="loadPage" class="d-flex justify-content-center align-items-center position-fixed top-0 w-100 h-100 bg-white">
         <div class="text-center">
-            <img src="<?php echo assets('img/logo/eleven-dark-logo'); ?>" alt="Eleven Logo on Loading page" width="200px">
+            <img src="<?php echo assets('img/logo/eleven-dark-logo.png'); ?>" alt="Eleven Logo on Loading page" width="200px">
             <br>
             <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading</span>

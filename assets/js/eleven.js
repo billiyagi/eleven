@@ -236,7 +236,7 @@ $('#signInForm').submit(function (event) {
 /** 
  * Cuaca API
 */
-$.getJSON("http://api.weatherapi.com/v1/current.json?key=71441368a2594f4a925103250232704&q=Bogor",
+$.getJSON("https://api.weatherapi.com/v1/current.json?key=71441368a2594f4a925103250232704&q=Bogor",
     function (weather) {
         $('#weatherLocation').text(`${weather.location.name}, ${weather.location.country}`)
         $('#weatherTemperature').text(`Suhu ${weather.current.temp_c} C`)

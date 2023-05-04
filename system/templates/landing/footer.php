@@ -13,9 +13,8 @@
         </div>
         <div class="nav mt-4">
             <a href="<?php echo BASE_URL_LANDING; ?>" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Home</a>
-            <a href="products.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Produk</a>
-            <a href="reseller.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Reseller</a>
-            <a href="about.php" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Tentang</a>
+            <a href="<?php echo BASE_URL_LANDING . 'products.php'; ?>" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Produk</a>
+            <a href="<?php echo BASE_URL_LANDING . 'about.php'; ?>" class="nav-link d-block w-100 fs-3 text-light mb-2 hover-bg-light">Tentang</a>
         </div>
     </div>
 

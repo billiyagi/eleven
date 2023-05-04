@@ -25,6 +25,7 @@ class UsersModel extends Database
         $getUsersStmt->execute();
 
         return $getUsersStmt->fetchAll(PDO::FETCH_OBJ);
+        $this->db = null;
     }
 
     public function getAllByRoleCostumer()
@@ -33,6 +34,22 @@ class UsersModel extends Database
         $getUsersStmt->execute();
 
         return $getUsersStmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getCountCostumer()
+    {
+        $getCountCostumerStmt = $this->db->prepare('SELECT COUNT(*) AS costumer FROM users WHERE role_id=2');
+        $getCountCostumerStmt->execute();
+
+        return $getCountCostumerStmt->fetchObject();
+    }
+
+    public function getCountAdmin()
+    {
+        $getCountAdminStmt = $this->db->prepare('SELECT COUNT(*) AS admin FROM users WHERE role_id=1');
+        $getCountAdminStmt->execute();
+
+        return $getCountAdminStmt->fetchObject();
     }
 
     /** 
@@ -45,6 +62,7 @@ class UsersModel extends Database
         $getUserStmt->execute();
 
         return $getUserStmt->fetchObject();
+        $this->db = null;
     }
 
 
@@ -56,6 +74,7 @@ class UsersModel extends Database
         $getUserStmt = $this->db->prepare('SELECT * FROM users WHERE username=:username');
         $getUserStmt->bindParam(':username', $username);
         $getUserStmt->execute();
+        $this->db = null;
 
         return $getUserStmt->fetchObject();
     }
@@ -69,6 +88,7 @@ class UsersModel extends Database
         $getUserStmt = $this->db->prepare('SELECT * FROM users WHERE email=:email');
         $getUserStmt->bindParam(':email', $email);
         $getUserStmt->execute();
+        $this->db = null;
 
         return $getUserStmt->fetchObject();
     }
@@ -141,6 +161,7 @@ class UsersModel extends Database
         if ($json) {
             if (!$this->getUserByUsername($username)) {
                 if ($insertUserStmt->execute()) {
+                    $this->db = null;
                     return json_encode(['status' => 'success']);
                 } else {
                     return json_encode(['status' => 'error']);
@@ -153,6 +174,7 @@ class UsersModel extends Database
         } else {
             if (!$this->getUserByUsername($username)) {
                 if ($insertUserStmt->execute()) {
+                    $this->db = null;
                     setFlashMessage('Pengguna berhasil dibuat');
                     return header('Location: ' . BASE_URL_ADMIN . 'users.php');
                 } else {
@@ -192,7 +214,7 @@ class UsersModel extends Database
         if (empty($user['password'])) {
             $password = $this->get($user['id'])->password;
         } else {
-            $password = $this->security->xss()->xss_clean($user['password']);
+            $password = password_hash($this->security->xss()->xss_clean($user['password']), PASSWORD_DEFAULT);
         }
 
         $firstName = $this->security->xss()->xss_clean($user['first_name']);
@@ -211,6 +233,7 @@ class UsersModel extends Database
 
 
         if ($userUpdateStmt->execute()) {
+            $this->db = null;
             if ($costumer) {
                 setFlashMessage('Pengguna berhasil diubah', 'success', 'Login ulang untuk melihat perubahan');
                 return header('Location: ' . URL_CLIENT . 'settings.php');
@@ -231,10 +254,13 @@ class UsersModel extends Database
 
     public function destroy($id)
     {
+
+
         $userDeleteStmt = $this->db->prepare("DELETE FROM users WHERE id =:id");
         $userDeleteStmt->bindParam(':id', $id);
 
         if ($userDeleteStmt->execute()) {
+            $this->db = null;
             setFlashMessage('Pengguna berhasil dihapus');
             return header('Location: ' . BASE_URL_ADMIN . 'users.php');
         } else {
@@ -251,6 +277,7 @@ class UsersModel extends Database
         $userActiveStmt->bindParam(':status', $status);
 
         if ($userActiveStmt->execute()) {
+            $this->db = null;
             setFlashMessage('Pengguna berhasil diaktifkan');
             return header('Location: ' . BASE_URL_ADMIN . 'users.php');
         } else {
@@ -261,12 +288,13 @@ class UsersModel extends Database
 
     public function userSetNonactive($id)
     {
-        $userActiveStmt = $this->db->prepare('UPDATE users SET status_activation=:status WHERE id=:id');
+        $userActiveStmt = $this->db->prepare('UPDATE users SET status_activation=:status_nonactive WHERE id=:id');
         $userActiveStmt->bindParam(':id', $id);
         $status = 0;
-        $userActiveStmt->bindParam(':status', $status);
+        $userActiveStmt->bindParam(':status_nonactive', $status);
 
         if ($userActiveStmt->execute()) {
+            $this->db = null;
             setFlashMessage('Pengguna berhasil dinonaktifkan');
             return header('Location: ' . BASE_URL_ADMIN . 'users.php');
         } else {

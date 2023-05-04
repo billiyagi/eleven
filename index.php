@@ -14,7 +14,7 @@
                                 <div class="mb-4">
                                     <div class="fs-1 eleven-font fw-bold">Fashionable disemua gaya unikmu.</div>
                                     <p class="mt-2">Raih potongan hingga 80% untuk pengguna baru, daftar akun sekarang.</p>
-                                    <a href="" class="btn btn-lg btn-outline-dark rounded-0 border-3">Daftar akun</a>
+                                    <a href="#" class="btn btn-lg btn-outline-dark rounded-0 border-3" data-bs-target="#signUpModal" data-bs-toggle="modal">Daftar akun</a>
                                 </div>
                             </div>
                         </div>

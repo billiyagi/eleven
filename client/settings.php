@@ -18,6 +18,14 @@ if ($costumerAddressModel->isUserHaveAddress($user->ID)) {
                     <?php require_once('../system/templates/client/side_menu.php') ?>
                 </div>
                 <div class="col-md-9">
+                    <?php if (!isset($costumerAddress)) : ?>
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <i class="fas fa-exclamation-triangle me-3"></i>
+                            <div>
+                                Alamat belum ditambahkan, mohon tambahankan untuk memulai transaksi.
+                            </div>
+                        </div>
+                    <?php endif; ?>
                     <div class="card mb-4">
                         <div class="card-header">
                             <strong>Akun</strong>

@@ -162,9 +162,11 @@ if (!isset($_GET['id']) || empty($product)) {
                                                 <label for="note" class="form-label">Catatan</label>
                                                 <textarea name="note" id="note" cols="30" rows="7" class="form-control"></textarea>
                                             </div>
-                                            <div class="row justify-content-end p-0">
-                                                <div class="col-md-4 p-0">
-                                                    <button type="submit" name="order_create" class="btn btn-dark rounded-0 w-100 fs-5">Konfirmasi Pesanan</button>
+                                            <div class="col-12">
+                                                <div class="row justify-content-md-end justify-content-center p-md-0">
+                                                    <div class="col-md-4 p-md-0">
+                                                        <button type="submit" name="order_create" class="btn btn-dark rounded-0 w-100 fs-5">Konfirmasi Pesanan</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -184,6 +186,8 @@ if (!isset($_GET['id']) || empty($product)) {
         </section>
     </form>
 </main>
+
+<?php echo getFlashMessage(); ?>
 
 <?php if (!isset($_SESSION['userEleven'])) : ?>
     <script>

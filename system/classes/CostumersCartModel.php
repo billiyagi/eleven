@@ -13,7 +13,7 @@ class CostumersCartModel extends Database
 
     public function getAllByUserLogin($user_id)
     {
-        $getAllCostumerUserLogin = $this->db->prepare('SELECT produk.id, produk.kode, produk.nama, produk.harga_jual, produk.image, costumer_carts.produk_id FROM costumer_carts INNER JOIN produk ON costumer_carts.produk_id = produk.id WHERE costumer_carts.produk_id = produk.id AND costumer_carts.user_id =:user_id');
+        $getAllCostumerUserLogin = $this->db->prepare('SELECT produk.id, produk.kode, produk.nama, produk.harga_jual, produk.image, costumer_carts.produk_id FROM costumer_carts INNER JOIN produk ON costumer_carts.produk_id = produk.id WHERE costumer_carts.produk_id = produk.id AND costumer_carts.user_id =:user_id ORDER BY costumer_carts.id DESC');
         $getAllCostumerUserLogin->bindParam(':user_id', $user_id);
         $getAllCostumerUserLogin->execute();
         return $getAllCostumerUserLogin->fetchAll(PDO::FETCH_OBJ);
@@ -58,13 +58,18 @@ class CostumersCartModel extends Database
         return (empty($productSavedCartStmt->fetchObject())) ? false : true;
     }
 
-    public function destroy($cart)
+    public function destroy($cart, $client = false)
     {
         $deleteCostumerCartStmt = $this->db->prepare('DELETE FROM costumer_carts WHERE produk_id=:product_id AND user_id=:user_id');
         $deleteCostumerCartStmt->bindParam(':user_id', $cart['user_id']);
         $deleteCostumerCartStmt->bindParam(':product_id', $cart['product_id']);
 
         $deleteCostumerCartStmt->execute();
-        return header('Location: ' . BASE_URL_LANDING . 'product.php?id=' . $cart['product_id']);
+
+        if ($client) {
+            return header('Location: ' . BASE_URL_CLIENT . 'cart.php');
+        } else {
+            return header('Location: ' . BASE_URL_LANDING . 'product.php?id=' . $cart['product_id']);
+        }
     }
 }

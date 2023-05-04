@@ -36,3 +36,8 @@ function excerpt($string, $length = null)
 {
     return substr($string, 0, $length);
 }
+
+function toDate($dateFormat, $date)
+{
+    return date($dateFormat, strtotime($date));
+}

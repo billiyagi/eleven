@@ -41,7 +41,7 @@
                                         <i class="fas fa-shopping-cart"></i>
                                     <?php endif; ?>
                                 </div>
-                                <small class="fw-light d-block mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
+                                <small class="fw-light d-block mb-2"><?php echo excerpt($product->deskripsi, 50); ?></small>
                                 <small class="badge bg-secondary rounded-0"><?php echo $product->tipe; ?></small>
                             </div>
                         </a>

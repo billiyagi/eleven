@@ -7,9 +7,8 @@
                 <a href="<?php echo BASE_URL_LANDING; ?>"><img src="<?php echo assets('img/logo/eleven-dark-logo.png'); ?>" alt="Logo eleven" class="img-brand"></a>
                 <div class="nav d-md-flex d-none">
                     <a href="<?php echo BASE_URL_LANDING; ?>" class="nav-link text-dark py-3">Beranda</a>
-                    <a href="products.php" class="nav-link text-dark py-3">Produk</a>
-                    <a href="reseller.php" class="nav-link text-dark py-3">Reseller</a>
-                    <a href="about.php" class="nav-link text-dark py-3">Tentang</a>
+                    <a href="<?php echo BASE_URL_LANDING . 'products.php'; ?>" class="nav-link text-dark py-3">Produk</a>
+                    <a href="<?php echo BASE_URL_LANDING . 'about.php'; ?>" class="nav-link text-dark py-3">Tentang</a>
                 </div>
             </div>
             <div class="d-flex">

@@ -43,7 +43,12 @@ $request->onSubmit('costumer_update', function () {
 });
 
 $request->onSubmit('user_delete', function () {
-    return $GLOBALS['userModel']->destroy($_POST['id']);
+    if ($GLOBALS['orderModel']->getUserOrderTotal($_POST['id']) == 0) {
+        return $GLOBALS['userModel']->destroy($_POST['id']);
+    } else {
+        setFlashMessage('Pengguna gagal dihapus', 'error', 'Pengguna masih melakukan transaksi');
+        return header('Location: ' . BASE_URL_ADMIN . 'users.php');
+    }
 });
 
 $request->onSubmit('user_active', function () {
@@ -72,11 +77,20 @@ $request->onSubmit('save_costumer_address', function () {
     }
 });
 
+
+/** 
+ * Costumer Cart Model
+ */
+
+
 $request->onSubmit('save_cart', function () {
     $GLOBALS['costumerCartModel']->create($_POST);
 });
 $request->onSubmit('remove_cart', function () {
     $GLOBALS['costumerCartModel']->destroy($_POST);
+});
+$request->onSubmit('remove_cart_client', function () {
+    $GLOBALS['costumerCartModel']->destroy($_POST, true);
 });
 
 

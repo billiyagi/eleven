@@ -11,6 +11,14 @@ class ProductsModel extends Database
     }
 
 
+    public function getTotalProductPrice()
+    {
+        $getTotalProductPrice = $this->db->prepare('SELECT SUM(harga_jual) AS totalProductPrice FROM produk');
+        $getTotalProductPrice->execute();
+
+        return $getTotalProductPrice->fetch(PDO::FETCH_OBJ);
+    }
+
     /** 
      * @method getAll
      * * Mengambil semua data produk
